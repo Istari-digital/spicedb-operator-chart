@@ -70,6 +70,12 @@ spec:
           spec:
             description: ClusterSpec holds the desired state of the cluster.
             properties:
+              baseImage:
+                description: |-
+                  BaseImage specifies the base container image to use for SpiceDB.
+                  If not specified, will fall back to the operator's --base-image flag,
+                  then to the imageName defined in the update graph.
+                type: string
               channel:
                 description: |-
                   Channel is a defined series of updates that operator should follow.
@@ -90,7 +96,8 @@ spec:
                   If multiple patches apply to the same object and field, later patches
                   in the list take precedence over earlier ones.
                 items:
-                  description: Patch represents a single change to apply to generated manifests
+                  description: Patch represents a single change to apply to generated
+                    manifests
                   properties:
                     kind:
                       description: Kind targets an object by its kubernetes Kind name.
@@ -141,10 +148,12 @@ spec:
                         type: string
                       type: array
                     channel:
-                      description: Channel is the name of the channel this version is in
+                      description: Channel is the name of the channel this version
+                        is in
                       type: string
                     description:
-                      description: Description a human-readable description of the update.
+                      description: Description a human-readable description of the
+                        update.
                       type: string
                     name:
                       description: Name is the identifier for this version
@@ -157,7 +166,8 @@ spec:
               conditions:
                 description: Conditions for the current state of the Stack.
                 items:
-                  description: Condition contains details for one aspect of the current state of this API Resource.
+                  description: Condition contains details for one aspect of the current
+                    state of this API Resource.
                   properties:
                     lastTransitionTime:
                       description: |-
@@ -230,13 +240,15 @@ spec:
                 minimum: 0
                 type: integer
               phase:
-                description: Phase is the currently running phase (used for phased migrations)
+                description: Phase is the currently running phase (used for phased
+                  migrations)
                 type: string
               secretHash:
                 description: SecretHash is a digest of the last applied secret
                 type: string
               targetMigrationHash:
-                description: TargetMigrationHash is a hash of the desired migration target and config
+                description: TargetMigrationHash is a hash of the desired migration
+                  target and config
                 type: string
               version:
                 description: |-
@@ -252,7 +264,8 @@ spec:
                       type: string
                     type: array
                   channel:
-                    description: Channel is the name of the channel this version is in
+                    description: Channel is the name of the channel this version is
+                      in
                     type: string
                   description:
                     description: Description a human-readable description of the update.
