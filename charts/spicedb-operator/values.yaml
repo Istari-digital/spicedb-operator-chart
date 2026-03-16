@@ -2,6 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Install the SpiceDBCluster CRD as a template resource.
+# This ensures the CRD is managed by Helm on both install and upgrade.
+installCRDs: true
+
 image:
   repository: ghcr.io/authzed/spicedb-operator
   pullPolicy: IfNotPresent
