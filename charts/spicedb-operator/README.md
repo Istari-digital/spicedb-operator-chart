@@ -8,7 +8,7 @@ Forked from [bushelpowered/spicedb-operator-chart](https://github.com/bushelpowe
 
 ## Source Code
 
-* <https://github.com/Istari-digital/spicedb-operator-chart>
+* <https://github.com/istari-digital/spicedb-operator-chart>
 * <https://github.com/authzed/spicedb-operator/releases/tag/v1.22.0>
 
 ## Values
